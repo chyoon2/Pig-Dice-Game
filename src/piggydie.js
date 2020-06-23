@@ -17,15 +17,15 @@ Player.prototype.rollDice = function () {
     return false;
   }
 };
-Player.prototype.gameScore = function () {
-  this.totalScore += this.turnScore;
-  if (this.totalScore >= 100) {
-    alert("you win");
-  } else {
-    return this.totalScore;
-  }
-};
+// Player.prototype.gameScore = function () {
+//   this.totalScore += this.turnScore;
+//   if (this.totalScore >= 100) {
+//     alert("you win");
+//   } else {
+//     return this.totalScore;
+//   }
+// };
 
-Player.prototype.switchActive = function () {
-  this.isActive = !this.isActive;
-};
+// Player.prototype.switchActive = function () {
+//   this.isActive = !this.isActive;
+// };
