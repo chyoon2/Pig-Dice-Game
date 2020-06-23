@@ -31,6 +31,6 @@ Player.prototype.gameScore = function () {
   }
 };
 
-// Player.prototype.switchActive = function () {
-//   this.isActive = !this.isActive;
-// };
+Player.prototype.switchActive = function () {
+  this.isActive = !this.isActive;
+};
