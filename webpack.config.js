@@ -19,7 +19,7 @@ plugins: [
   new CleanWebpackPlugin(),
   new Dotenv(),
   new HtmlWebpackPlugin({
-    title: 'My Project',
+    title: 'Die Piggy Die',
     template: './src/index.html',
     inject: 'body'
   })
