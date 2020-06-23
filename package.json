@@ -1,5 +1,5 @@
 {
-  "name": "Template",
+  "name": "pig dice test",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -11,7 +11,7 @@
     "debug": "node --inspect node_modules/.bin/jest --runInBand"
   },
   "keywords": [],
-  "author": "",
+  "author": "chris and mariel",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.4",
