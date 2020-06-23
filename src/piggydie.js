@@ -5,26 +5,31 @@ export function Player(currentRoll, turnScore, totalScore, isActive) {
   this.totalScore = totalScore;
   this.isActive = isActive;
 }
+
 Player.prototype.rollDice = function () {
-  let randomNumber = Math.floor((Math.random() * 6) + 1);
-  this.currentRoll = randomNumber;
-  if (randomNumber === 1) {
+  let randNumb = randNumbGenerator();
+  this.currentRoll = randNumb;
+  if (randNumb === 1) {
     this.turnScore = 0;
-    this.currentRoll = 1;
     return true;
   } else {
-    this.turnScore += randomNumber; 
+    this.turnScore += randNumb; 
     return false;
   }
 };
-// Player.prototype.gameScore = function () {
-//   this.totalScore += this.turnScore;
-//   if (this.totalScore >= 100) {
-//     alert("you win");
-//   } else {
-//     return this.totalScore;
-//   }
-// };
+
+export function randNumbGenerator () {
+  let randomNumber = Math.floor((Math.random() * 6) + 1);
+  return randomNumber;
+}
+Player.prototype.gameScore = function () {
+  this.totalScore += this.turnScore;
+  if (this.totalScore >= 100) {
+    return "you win";
+  } else {
+    return this.totalScore;
+  }
+};
 
 // Player.prototype.switchActive = function () {
 //   this.isActive = !this.isActive;
