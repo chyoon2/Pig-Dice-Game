@@ -27,7 +27,7 @@ let player1 = new Player(0, 0, 0, true);
 let player2 = new Player(0, 0, 0, false);
 // let btnRollOne = document.querySelector('.btn-rollOne');
 // let btnHoldOne = document.querySelector('.btn-holdOne');
-// let btnRollTwo = document.querySelector('.btn-rollTwo');
+// let btnRollTwo = document.querySelect('.btn-rollTwo');
 // let btnHoldTwo = document.querySelector('.btn-holdTwo');
 
 $(document).ready(function () {

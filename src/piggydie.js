@@ -8,7 +8,7 @@ export function Player(currentRoll, turnScore, totalScore, isActive) {
 
 Player.prototype.rollDice = function () {
   let randNumb = randNumbGenerator();
-  this.currentRoll = randNumb;
+  
   if (randNumb === 1) {
     this.turnScore = 0;
     return true;
@@ -19,8 +19,11 @@ Player.prototype.rollDice = function () {
 };
 
 export function randNumbGenerator () {
-  let randomNumber = Math.floor((Math.random() * 6) + 1);
-  return randomNumber;
+  this.currentRoll = Math.floor((Math.random() * 6) + 1);
+
+  return this.currentRoll;
+}
+}
 }
 Player.prototype.gameScore = function () {
   this.totalScore += this.turnScore;
