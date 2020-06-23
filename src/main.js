@@ -5,7 +5,23 @@ import $ from 'jquery';
 
 import { Player } from './piggydie.js';
 
-import { activePlayer } from './piggydie.js';
+function activePlayer() {
+  if (player1.isActive === true && player2.isActive === false) {
+    $(".btn-holdTwo").show();
+    $(".btn-rollTwo").show();
+    $(".btn-holdOne").hide();
+    $(".btn-rollOne").hide();
+    player1.switchActive();
+    player2.switchActive();
+  } else if (player2.isActive === true && player1.isActive === false) {
+    $(".btn-holdOne").show();
+    $(".btn-rollOne").show();
+    $(".btn-holdTwo").hide();
+    $(".btn-rollTwo").hide();
+    player1.switchActive();
+    player2.switchActive();
+  }
+}
 
 let player1 = new Player(0, 0, 0, true);
 let player2 = new Player(0, 0, 0, false);
@@ -24,7 +40,10 @@ $(document).ready(function () {
   $(".btn-rollTwo").hide();
   $(".btn-rollOne").click(function (event) {
     event.preventDefault();
-    player1.rollDice();
+    if (player1.rollDice()){
+      activePlayer()
+    }
+
     $('.player-1-roll').text(player1.currentRoll);
     $('.player-1-turn-total').text(player1.turnScore);
   });
@@ -38,7 +57,10 @@ $(document).ready(function () {
   });
   $(".btn-rollTwo").click(function (event) {
     event.preventDefault();
-    player2.rollDice();
+    if (player2.rollDice()) {
+      activePlayer()
+    }
+
     $('.player-2-roll').text(player2.currentRoll);
     $('.player-2-turn-total').text(player2.turnScore);
   });

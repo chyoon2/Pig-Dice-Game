@@ -11,9 +11,11 @@ Player.prototype.rollDice = function () {
   if (randomNumber === 1) {
     this.turnScore = 0;
     this.currentRoll = 1;
-    activePlayer();
-  } else { this.turnScore += randomNumber; }
-  return this.currentRoll;
+    return true;
+  } else {
+    this.turnScore += randomNumber; 
+    return false;
+  }
 };
 Player.prototype.gameScore = function () {
   this.totalScore += this.turnScore;
@@ -27,20 +29,3 @@ Player.prototype.gameScore = function () {
 Player.prototype.switchActive = function () {
   this.isActive = !this.isActive;
 };
-export function activePlayer() {
-  if (player1.isActive === true && player2.isActive === false) {
-    $(".btn-holdTwo").show();
-    $(".btn-rollTwo").show();
-    $(".btn-holdOne").hide();
-    $(".btn-rollOne").hide();
-    player1.switchActive();
-    player2.switchActive();
-  } else if (player2.isActive === true && player1.isActive === false) {
-    $(".btn-holdOne").show();
-    $(".btn-rollOne").show();
-    $(".btn-holdTwo").hide();
-    $(".btn-rollTwo").hide();
-    player1.switchActive();
-    player2.switchActive();
-  }
-}
